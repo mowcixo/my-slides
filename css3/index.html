@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+<head>
+    <title>Introducción CSS3</title>
+	
+	<!-- METAS -->
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="Moisés Gramary Barbosa" />
+
+	<!-- CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet" />
+    <link href="css/impress.css" rel="stylesheet" />
+	<link href="css/general.css" rel="stylesheet" />
+    
+	<!-- ICONS -->
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	
+	<script src="js/zepto.js"></script>
+	<script type="text/javascript">
+		$(function($) {
+			$('div[rel="playroad"]').css({
+				width: window.innerWidth+'px',
+				height: window.innerHeight+'px',
+				'background-size':  window.innerWidth+'px '+window.innerHeight+'px'
+			});
+			
+			document.addEventListener('impress:stepenter', function(ev) {
+				var step= $('div.step.active'),
+					stepName= step.attr('id');
+				
+				switch( stepName ) {
+					case 'desktop-demo' : {
+						
+						setTimeout(function() {
+							$('#desktop-demo-dialog').addClass('animate');
+							$('#desktop-demo-overlay').addClass('animate');
+						}, 2000);						
+						
+						break;
+					}
+					case 'mobile-demo' : {
+						
+						setTimeout(function() {
+							$('#mobile-demo-dialog').addClass('animate');
+							$('#mobile-demo-overlay').addClass('animate');
+						}, 2000);						
+						
+						break;
+					}
+				}
+				
+			}, true);
+			document.addEventListener('impress:stepleave', function(ev) {
+				var step= $('div.step.present'),
+					stepName= step.attr('id');
+				
+				switch( stepName ) {
+					case 'desktop-demo' : {
+						
+						$('#desktop-demo-dialog').removeClass('animate');
+						$('#desktop-demo-overlay').removeClass('animate');			
+						
+						break;
+					}
+					case 'mobile-demo' : {
+						
+						$('#mobile-demo-dialog').removeClass('animate');
+						$('#mobile-demo-overlay').removeClass('animate');			
+						
+						break;
+					}
+				}
+				
+			}, true);
+		})();
+	</script>
+	
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-569746-10']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="intro" class="step slide" data-x="0" data-y="0" data-scale="4">
+        <h1>Introducción a CSS3</h1>
+		<div style="text-align:center;">
+			<img alt="" style="width:480px" src="img/t_logo.png" />
+		</div>
+		<p>&nbsp;</p>
+		<p>Moisés Gramary Barbosa</p>
+		<p>GDG Vigo, Noviembre del 2012</p>
+    </div>
+	
+    <div id="webetes" class="step slide" data-x="2000" data-y="-5000" data-scale="4" data-z="-3000" data-rotate="-90">
+        <h1>Web βeta (http://webet.es)</h1>
+		<div style="text-align:center;">
+			<img alt="" style="width:320px" src="img/webetes.png" />
+		</div>
+		<p style="text-align:center">La Web todavía está naciendo, la Web todavía es βeta.</p>
+		<p style="text-align:center">Creada en 2012</p>
+		<p style="text-align:center"><a href="http://www.facebook.com/loswebetes" target="_blank">facebook.com/loswebetes</a> - <a href="http://www.twitter.com/loswebetes" target="_blank">@loswebetes</a> - <a href="https://plus.google.com/113027060629483458095" target="_blank">Google+</a></p>
+		<p style="text-align:center"><a href="mailto:info@webet.es" target="_blank">info@webet.es</a></p>
+		<p>&nbsp;</p>
+		<p>Mario Gramary Barbosa (Android + iOS)<br />Moisés Gramary Barbosa (Web + Escritorio)</p>
+    </div>
+
+    <div id="overcss2" class="step slide" data-x="8000" data-y="-9000" data-scale="4" data-z="-6000" data-rotate="0">
+        <h1>Mejoras respecto a CSS2</h1>
+		<ul>
+			<li>Colores <code>rgba()</code>, <code>text-shadow</code> y <code>text-overflow</code>.</li>
+			<li>Selectores más potentes <code>a[href^="http"]</code>, <code>a[href$=".php"]</code>, <code>a[href*=".com"]</code>...</li>
+			<li>Pseudo selectores nuevos <code>:not(x)</code>, <code>:enabled</code>, <code>:disabled</code>, <code>:checked</code>, <code>:nth-child(n)</code>, <code>:last-child</code>...</li>
+			<li>Grandes cambios en backgrounds: backgrounds múltiples, <code>background-origin</code>, <code>background-size</code>, <code>background-clip</code>...</li>
+			<li>Degradados: lineares, radiales...</li>
+			<li>Grandes cambios en bordes: <code>border-radius</code>, bordes con imágenes; y sombras <code>box-shadow</code>.</li>
+			<li>Columnas CSS.</li>
+			<li>Media queries y <code>@font-face</code>.</li>
+			<li>Funciones de voz.</li>
+		</ul>
+    </div>
+	
+    <div id="challenge" class="step slide" data-x="15000" data-y="-7000" data-scale="4" data-z="-9000" data-rotate="-90">
+        <h1>El reto: los navegadores</h1>
+		<ul>
+			<li><pre class="piramid" style="float:right;">
+                -webkit-border-radius:8px;
+                   -moz-border-radius:8px;
+                    -ms-border-radius:8px;
+                     -o-border-radius:8px;
+                        border-radius:8px;
+			</pre>Soportado por la gran mayoría de navegadores de escritorio aunque con prefijos propietarios.</li>
+			<li>Internet Explorer es el que lleva más retraso, siendo IE9 el que empieza a dar soporte (aunque las animaciones, transiciones, degradados y <code>text-shadow</code> quedan para IE10+)</li>
+			<li>Sintaxis no estándar:
+			<div>
+				<div class="navwrong"><pre>
+          -moz-border-radius-topleft:8px;
+          -moz-border-radius-topright:8px;
+          -moz-border-radius-bottomright:8px;
+          -moz-border-radius-bottomleft:8px;
+				</pre></div>
+				<div class="navright"><pre>
+[vendor]-border-top-left-radius:8px;
+[vendor]-border-top-right-radius:8px;
+[vendor]-border-bottom-right-radius:8px;
+[vendor]-border-bottom-left-radius:8px;
+			</pre></div>
+			</div>
+			</li>
+			<li style="clear:both;">Soportado en la gran mayoría de navegadores móviles, la mayoría sin prefijos propietarios.</li>
+			<li>Herramientas multiplataforma: <a href="http://border-radius.com/" target="_blank">generador de border-radius</a>, <a href="http://www.colorzilla.com/gradient-editor/" target="_blank">generador de degradados</a> <a href="http://gradients.glrzad.com/" target="_blank">[2]</a>, <a href="http://css3gen.com/box-shadow/" target="_blank">generador de box-shadow</a>, <a href="http://css3please.com/" target="_blank">css3please.com</a>.</li>
+		</ul>
+    </div>
+
+    <div id="desktop" class="step slide" data-x="15000" data-y="-2000" data-scale="4" data-z="-12000" data-rotate="0">
+        <h1>Ventajas en plataformas de escritorio</h1>
+		<ul>
+			<li>Muchas de las imágenes en los sitios Web presenciales son degradados, sombras, bordes y botones.</li>
+			<li>Se gana velocidad de carga al eliminar gran parte de las imágenes.</li>
+			<li>Interfaces más limpias.</li>
+			<li>Menos volumen de etiquetas HTML y de Javascript.</li>
+			<li>Las imágenes se reducirán a iconos y logotipos.</li>
+		</ul>
+		<img alt="" src="img/mofa-chrome.jpg" style="height:310px;display:block;margin:0 auto;" />
+    </div>
+	
+    <div id="desktop-demo" rel="playroad" class="step" data-x="22000" data-y="-2000" data-scale="4" data-z="-12000" data-rotate="0">
+	<!-- INI DIAPO -->
+		<div id="desktop-demo-overlay" class="ui-widget-overlay"></div>
+		<div id="desktop-demo-dialog" class="ui-dialog">
+
+			<div class="header">
+				Informaci&oacute;n
+			</div>
+			
+			<div class="content">
+				<div class="avatar"></div>
+				<dl>
+					<dt><strong>Nombre</strong></dt>
+					<dd><input type="text" value="Moisés" /></dd>
+					<dt><strong>Apellidos</strong></dt>
+					<dd><input type="text" value="Gramary Barbosa" /></dd>
+					<dt><strong>Descripción</strong></dt>
+					<dd>
+						<textarea style="height:200px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</textarea>
+					</dd>
+				</dl>
+			</div>
+			
+			<div class="footer">
+				<input type="button" class="right" value="Aceptar" style="float:right;" />
+				<input type="button" class="wrong" value="Cancelar" style="float:right;margin-right:20px;" />
+			</div>
+			
+		</div>
+	<!-- FIN DIAPO -->
+    </div>
+
+    <div id="mobile" class="step slide" data-x="12000" data-y="2000" data-scale="4" data-z="-15000" data-rotate="-90">
+        <h1>Ventajas en plataformas móviles</h1>
+		<ul>
+			<li><img style="display:block;float:right;" alt="" src="img/tfuchs.png" />Perfecto para pantallas Apple Retina / HD (pantallas con mucha densidad de píxeles), ya que no afectará la calidad de imagen. Esto nos ahorra el tener que hacer las imágenes con el doble de tamaño.</li>
+			<li>Soporte de un mismo sitio Web para varios dispositivos gracias a las Media Queries.</li>
+		</ul>
+		<img alt="" src="img/media-query-devices.png" style="height:280px;display:block;margin:0 auto;" />
+    </div>
+	
+    <div id="mobile-demo" rel="playroad" class="step" data-x="12000" data-y="-5000" data-scale="4" data-z="-15000" data-rotate="-90">
+	<!-- INI DIAPO -->
+		<div id="mobile-demo-overlay" class="ui-widget-overlay"></div>
+		<div id="mobile-demo-dialog">
+			
+			<div class="mobile-content">
+				<div id="main">
+					<div id="workset">
+						<div id="head">
+							<button class="blue arrow" ontouchstart="javascript:fn.go.getUpdatedPositions();">
+								Volver
+							</button>
+							<strong>Web βeta</strong>
+							<button class="edit right">
+								OK
+							</button>
+						</div>
+						<div id="content">
+							<div rel="tab-about">
+								<div style="text-align:center;">
+								
+									<div>&nbsp;</div>
+									
+									<img alt="" src="img/webetes.png" style="display:block;margin:0 auto;width:120px;" />
+									<p>&nbsp;</p>
+									<p>La Web todavía está naciendo, la Web todavía es βeta.</p>
+									<p>&nbsp;</p>
+									<p>facebook.com/loswebetes - @loswebetes</p>
+									<p>&nbsp;</p>
+									<p>Mario Gramary Barbosa (Android + iOS)<br />Moisés Gramary Barbosa (Web + Escritorio)</p>
+									<p>&nbsp;</p>
+									<p><a href="mailto:info@webet.es">info@webet.es</a><br />
+									<a href="http://webet.es" target="_blank">webet.es</a></p>
+								
+								</div>
+							</div>
+						</div>
+						<div id="foot">
+							<ul>
+								<li class="selected">
+									<img alt="" src="img/iphone-info-ico.png" />
+									<strong>Información</strong>
+								</li>
+								<li>
+									<img alt="" src="img/iphone-develop-ico.png" />
+									<strong>Programación</strong>
+								</li>
+								<li>
+									<img alt="" src="img/iphone-design-ico.png" />
+									<strong>Diseño</strong>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	<!-- FIN DIAPO -->
+    </div>
+	
+	<div id="mobile-demo-queries" class="step slide" data-x="12000" data-y="-12000" data-scale="4" data-z="-15000" data-rotate="-90">
+        <h1>Ventajas en plataformas móviles: Media Queries</h1>
+		<p>Las media queries nos permiten adaptar el diseño según el dispositivo móvil desde el que acceda el usuario.</p>
+		<p>&nbsp;</p>
+		<pre><img alt="" style="display:block;float:right;" src="img/ipad2.png" />@import url('ipad.css') only screen and (max-device-width: 1024px);</pre>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<pre><img alt="" style="display:block;float:left;" src="img/ipad3.png" />@import url('ipad-retina.css') only screen
+		and (max-device-width: 2048px)
+		and (min-device-pixel-ratio:2);</pre>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<pre><img alt="" style="display:block;float:right;" src="img/iphone3lt.png" />@import url('iphone.css') only screen and (max-device-width: 480px);</pre>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<pre><img alt="" style="display:block;float:left;" src="img/iphone4rt.png" />@import url('iphone-retina.css') only screen 
+		and (max-device-width: 640px) 
+		and (min-device-pixel-ratio:2);</pre>
+    </div>
+
+    <div id="animation" class="step slide" data-x="9000" data-y="-3000" data-scale="4" data-z="-18000" data-rotate="0">
+        <h1>Animaciones y ahorro de recursos</h1>
+		<ul>
+			<li><strong>Transiciones</strong>: las transiciones actúan sobre los valores de las propiedades de un elemento, cambiándolo gradualmente si este se ha modificado.</li>
+			<li><strong>Animaciones</strong>: las animaciones, de igual manera que las transciones actúan sobre los valores de las propiedades de un elemento, pero <strong>de manera explícita</strong>.</li>
+			<li>Las librerías JavaScript que cumplen estas características (jQuery, script.aculo.us, ZeptoJS...) limitan el uso de algunas propiedades y requieren más recursos por cambiar los valores a través de funciones de timing.</li>
+		</ul>
+		<img alt="" src="img/css-vs-js.png" style="height:220px;display:block;margin:0 auto;" />
+    </div>
+	
+	<div id="animation-transition" class="step slide" data-x="9000" data-y="-7000" data-scale="4" data-z="-18000" data-rotate="0">
+        <h1>Transiciones</h1>
+		<div class="transition-demo"></div>
+		<p>&nbsp;</p>
+		<pre>
+div.transition-demo {
+  width:100%;
+  height:120px;
+  background:red;
+  transition-property:background; <span style="color:#3afe3a">/* Propiedades CSS del elemento, separadas por
+  comas, que serán modificadas en el caso de que cambien. Para observar todas
+  bastará con poner 'all'. */</span>
+  
+  transition-duration:1s; <span style="color:#3afe3a">/* Tiempo que tardará en ejecutarse la transición. */</span>
+  
+  transition-timing-function:linear; <span style="color:#3afe3a">/* Curva de velocidad del efecto de
+  transición. */</span>
+  
+  transition-delay:0s; <span style="color:#3afe3a">/* Tiempo que tardará la transición en ejecutarse una vez
+  que la propiedad CSS observada cambie. */</span>
+}
+
+div.transition-demo:hover {
+  background:blue;
+}</pre>
+    </div>
+	
+	<div id="animation-animation" class="step slide" data-x="9000" data-y="-11000" data-scale="4" data-z="-18000" data-rotate="0">
+        <h1>Animaciones</h1>
+		<div class="animation-demo"></div>
+		<p style="height:10px;"></p>
+		<pre>
+@keyframes animation-demo
+{
+  0% { background-color: red; }
+  25% { border-radius: 100px; }
+  75% { transform: rotateY(180deg); }
+  100% { border-radius: 0px; background-color: blue; }
+}
+div.animation-demo {
+  width:600px;
+  margin:0 auto;
+  height:120px;
+  animation-name:animation-demo; <span style="color:#3afe3a">/* Nombre de la animación definida en el
+  @keyframes. */</span>
+  
+  animation-duration:4s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:infinite; <span style="color:#3afe3a">/* Número de repeticiones que se ejecutará
+  la animación, 'infinite' lo hará indefinidamente. */</span>
+  
+  animation-direction:alternate; <span style="color:#3afe3a">/* Especifica si la animación debe reproducirse
+  inversamente una vez finalizada. Solo tendrá efecto en animaciones con más
+  de una iteracción. El valor 'normal' se reproducirá hasta el final pero volverá
+  al inicio de golpe. */</span>
+}</pre>
+<pre>
+    </div>
+	
+	<div id="animation-timing-functions" class="step slide" data-x="9000" data-y="-15000" data-scale="4" data-z="-18000" data-rotate="0">
+        <h1>Timing functions</h1>
+		<div id="block">
+			<div class="line">ease (default)</div>
+			<div class="line linear">linear</div>
+			<div class="line ease-in">ease-in</div>
+			<div class="line ease-out">ease-out</div>
+			<div class="line ease-in-out">ease-in-out</div>
+			<div class="line cubic">cubic-bezier</div>
+		</div>
+		<p>&nbsp;</p>
+		<p>Dependiendo del efecto que se le quiera dar a la animación se escogerá una timing function u otra, hay herramientas que nos facilitan la elección como <a href="http://cubic-bezier.com" target="_blank">cubic-bezier.com</a>.</p>
+    </div>
+	
+    <div id="3d" class="step slide" data-x="15000" data-y="-8000" data-scale="4" data-z="-21000" data-rotate="-90">
+        <h1>3D</h1>
+		<ul>
+			<li>CSS3 brinda un conjunto completo de métodos para construír una animación 3D: <code>matrix3d</code>, <code>translate3d(x,y,z)</code>, <code>translateX(x)</code>, <code>translateY(y)</code>, <code>translateZ(z)</code>, <code>scale3d(x,y,z)</code>, <code>scaleX(x)</code>, <code>scaleY(y)</code>, <code>scaleZ(z)</code>, <code>rotate3d(x,y,z,angle)</code>, <code>rotateX(angle)</code>, <code>rotateY(angle)</code>, <code>rotateZ(angle)</code>, <code>perspective(n)</code></li>
+			<li>Hay infinidad de ejemplos del uso del 3d en internet: <a href="http://css-3d.org/" target="_blank">css-3d.org</a>, <a href="http://codepen.io/peterwestendorp/details/wGECk" target="_blank">Codepen 3D ball</a>, <a href="http://desandro.github.com/3dtransforms/examples/cube-02-show-sides.html" target="_blank">3D Cube</a>, <a href="http://www.gesteves.com/experiments/starwars.html" target="_blank">Star Wars CSS3</a>.</li>
+		</ul>
+		<p style="height:10px"></p>
+		<img alt="" src="img/blender-css3.gif" style="height:240px;display:block;margin:0 auto;" />
+    </div>
+	
+    <div id="3d-demo" rel="playroad" class="step" data-x="15000" data-y="-15000" data-scale="4" data-z="-21000" data-rotate="-90">
+	<!-- INI DIAPO -->
+	<div style="width:100%;">
+		<iframe src="3ddemo/index.html" style="width:1024px;height:740px;margin:0 auto;display:block;" scrolling="no"></iframe>
+	</div>
+	<a href="http://www.marcofolio.net/" title="Visit Marcofolio.net" style="position:absolute;bottom:0;left:50%;right:50%;margin-left:-200px;background:none;color:#fff;margin-bottom:20px;">Marcofolio.net</a>
+	<!-- FIN DIAPO -->
+    </div>
+	
+    <div id="overview" class="step" data-x="6000" data-y="-3000" data-scale="10"></div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

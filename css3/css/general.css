@@ -1,0 +1,40 @@
+@import url('desktop.css');
+@import url('mobile.css');
+@import url('challenge.css');
+@import url('animation.css');
+
+h1 {
+	font-family: 'Averia Sans Libre', cursive!important;
+	font-size:1.4em;
+	color:Brown;
+	margin-bottom:20px;
+}
+h2 {
+	margin-bottom:6px!important;
+}
+ul {
+	list-style-type:dotted;
+}
+li {
+	padding:4px 0;
+}
+code {
+	font-family:"Courier New"!important;
+	color:#3afe3a;
+	font-size:0.8em;
+}
+.slide-nobg code {
+	color:green!important
+}	
+pre {
+	font-size:0.6em;
+	padding-top:0!important;
+	padding-right:0!important;
+	padding-bottom:0!important;
+	padding-left:0!important;
+	padding:8px;
+	border:0;
+	font-family:"Courier New"!important;
+	color:blue;
+	line-height:18px;
+}

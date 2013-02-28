@@ -1,0 +1,172 @@
+div.menu-box,
+#main
+{
+    -webkit-user-select:none;
+       -moz-user-select:none;
+		-ms-user-select:none;
+		 -o-user-select:none;
+			user-select:none;
+	
+    width:100%;
+    height:100%;
+}
+
+
+#content
+{
+    overflow:auto;
+    background:transparent url('../../img/content-bg.png') repeat top left;
+}
+
+#content p,
+#content h1,
+#content h2
+{
+    color:#4c566c;
+    text-shadow:0 1px #fff;
+}
+
+#content h1,
+#content h2
+{
+    padding:0;
+    margin-bottom:0;
+    padding-left:10px;
+}
+
+#content h1 img,
+#content h2 img
+{
+    display:block;
+    width:22px;
+    margin-top:3px;
+    margin-right:4px;
+    float:left;
+}
+
+#content h1
+{
+    font-size:1.3em;
+}
+
+#content h2
+{
+    font-weight:normal;
+    font-size:1.1em;
+}
+
+#workset
+{
+    position:absolute;
+    top:0;
+    left:0;
+    background:#fff;
+    overflow:hidden;
+	width:100%;
+}
+
+#head,
+#foot,
+#content
+{
+    width:100%;
+}
+
+#head
+{
+	height:42px;
+}
+
+#head strong
+{
+	font-size:1.28em;
+	padding-top:0.60em;
+}
+
+#headTitle
+{
+    z-index:0;
+    display:block;
+    position:absolute;
+    width:100%;
+}
+
+#head button,
+#head input[type="button"],
+#head input[type="submit"]
+{
+    font-size:0.7em;
+    z-index:1;
+    display:block;
+    position:absolute;
+    margin-top:6px;
+    margin-left:8px;
+    padding:2px 3px 2px 3px;
+}
+
+#head button.right,
+#head input[type="button"].right,
+#head input[type="submit"].right
+{
+    margin-left:0;
+    right:7px;
+	top:0;
+}
+
+#head button.blue.arrow,
+#head input[type="button"].blue.arrow,
+#head input[type="submit"].blue.arrow
+{
+    border-radius:100px 17px 17px 100px / 50px 17px 17px 50px!important;
+    padding-left:10px;
+    padding-right:4px;
+}
+
+#foot ul
+{
+	list-style:none;
+    display:block;
+    padding:0;
+    width:220px;
+    margin:0 auto;
+    margin-top:2px;
+}
+
+#foot ul li
+{
+	display:block;
+	min-width:60px;
+	height:44px;
+	border-radius:4px;
+    float:left;
+    margin:0 2px;
+}
+#foot ul li.selected,
+#foot ul li:hover
+{
+    background:-webkit-linear-gradient(top, #484848 0%, #353535 49%, #252525 50%, #252525 100%)!important;
+    background:-moz-linear-gradient(top, #484848 0%, #353535 49%, #252525 50%, #252525 100%)!important;
+    background:-ms-linear-gradient(top, #484848 0%, #353535 49%, #252525 50%, #252525 100%)!important;
+    background:-o-linear-gradient(top, #484848 0%, #353535 49%, #252525 50%, #252525 100%)!important;
+    background:linear-gradient(top, #484848 0%, #353535 49%, #252525 50%, #252525 100%)!important;
+}
+#foot ul li img
+{
+    width:28px;
+    display:block;
+    margin:0 auto;
+    margin-top:2px;
+}
+#foot ul li strong
+{
+    margin-top:2px;
+	display:block;
+	text-align:center;
+	font-size:0.6em;
+    color:#999;
+    padding:0 0.3em;
+}
+#foot ul li.selected strong
+{
+    color:#fff;
+}

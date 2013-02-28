@@ -1,0 +1,55 @@
+.piramid {
+	font-size:0.6em;
+	height:141px;
+	width:425px;
+	margin:0 auto;
+	border:0!important;
+	background:transparent url('../img/piramide.jpg') no-repeat bottom left;
+	font-family:"Courier New"!important;
+	color:blue;
+	line-height:18px;
+}
+
+.navwrong {
+	height:70px;
+	float:left;
+	width:320px;
+	overflow:hidden!important;
+	border:2px solid red;
+	background:#ffc9c9 url('../img/ffico.png') no-repeat center left;
+	
+	-webkit-border-top-left-radius:16px;
+	-webkit-border-bottom-left-radius:16px;
+	   -moz-border-radius-topleft:16px;
+	   -moz-border-radius-bottomleft:16px;
+		-ms-border-top-left-radius:16px;
+		-ms-border-bottom-left-radius:16px;
+		 -o-border-top-left-radius:16px;
+		 -o-border-bottom-left-radius:16px;
+			border-top-left-radius:16px;
+			border-bottom-left-radius:16px;
+}
+.navright {
+	height:70px;
+	float:right;
+	width:450px;
+	overflow:hidden!important;
+	border:2px solid green;
+	background:#9bff9b url('../img/nofficos.png') no-repeat center right;
+	
+	-webkit-border-top-right-radius:16px;
+	-webkit-border-bottom-right-radius:16px;
+	   -moz-border-radius-topright:16px;
+	   -moz-border-radius-bottomright:16px;
+		-ms-border-top-right-radius:16px;
+		-ms-border-bottom-right-radius:16px;
+		 -o-border-top-right-radius:16px;
+		 -o-border-bottom-right-radius:16px;
+			border-top-right-radius:16px;
+			border-bottom-right-radius:16px;
+}
+
+.navwrong,
+.navright {
+	font-size:0.8em;
+}
